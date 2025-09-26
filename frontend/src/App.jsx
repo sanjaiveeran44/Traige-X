@@ -1,10 +1,13 @@
-// frontend/src/App.jsx
+// src/App.jsx
 import React from "react";
+import "./App.css";
+import "./pages/RootPage.css";
+import RootPage from "./pages/RootPage";
 
 function App() {
   return (
-    <div>
-      <h1>Welcome to TriageX</h1>
+    <div className="app">
+      <RootPage />
     </div>
   );
 }
