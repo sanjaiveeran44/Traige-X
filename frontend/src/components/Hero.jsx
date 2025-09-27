@@ -1,6 +1,9 @@
 import React from 'react';
 import './Hero.css';
+import { useNavigate } from 'react-router-dom';
 export default function Hero() {
+
+  
   return (
     <section className="hero">
       <div className="hero-container">
