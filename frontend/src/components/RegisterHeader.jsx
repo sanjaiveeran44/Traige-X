@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './RegisterHeader.css';
 
 // RegisterHeader Component
 const RegisterHeader = () => {
