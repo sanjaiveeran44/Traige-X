@@ -46,8 +46,8 @@ const LoginHero = () => {
             <label htmlFor="username">Username or Email</label>
             <input
               type="text"
-              id="username"
-              name="username"
+              id="email"
+              name="email"
               value={formData.username}
               onChange={handleInputChange}
               required

@@ -1,7 +1,7 @@
-import RegisterHeader from "../components/RegisterHeader";
-import RegisterHero from "../components/RegisterHero";
-import RegisterFooter from "../components/RegisterFooter";
-import "../pages/RegisterPage.css";
+import RegisterHeader from "../components/RegisterPage/RegisterHeader";
+import RegisterHero from "../components/RegisterPage/RegisterHero";
+import RegisterFooter from "../components/RegisterPage/RegisterFooter";
+import "./RegisterPage.css";
 const RegisterPage = () => {
     return (
       <div className="register-page">

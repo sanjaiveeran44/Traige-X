@@ -1,6 +1,6 @@
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+import Header from "../components/RootPage/Header";
+import Hero from "../components/RootPage/Hero";
+import Footer from "../components/RootPage/Footer";
 import "./RootPage.css";
 
 const RootPage = () => {

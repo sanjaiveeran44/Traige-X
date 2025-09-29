@@ -1,4 +1,4 @@
-import "../components/RegisterFooter.css";
+import "./RegisterFooter.css";
 import React from "react";
 const RegisterFooter = () => {
     return (

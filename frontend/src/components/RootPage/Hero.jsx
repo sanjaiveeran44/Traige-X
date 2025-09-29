@@ -3,6 +3,10 @@ import './Hero.css';
 import { useNavigate } from 'react-router-dom';
 export default function Hero() {
 
+  const navigate = useNavigate();
+  const handleCreateAccount =() =>{
+    navigate('/register');
+  }
   
   return (
     <section className="hero">
@@ -25,7 +29,7 @@ export default function Hero() {
             Get the right care at the right time with intelligent prioritization 
             and comprehensive patient monitoring.
           </p>
-          <button className="create-account-btn">Create Account</button>
+          <button className="create-account-btn" onClick = {handleCreateAccount}>Create Account</button>
         </div>
       </div>
     </section>

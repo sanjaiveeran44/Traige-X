@@ -1,6 +1,6 @@
-import LoginHeader from "../components/LoginHeader";
-import LoginHero from "../components/LoginHero";
-import LoginFooter from "../components/LoginFooter";
+import LoginHeader from "../components/LoginPage/LoginHeader";
+import LoginHero from "../components/LoginPage/LoginHero";
+import LoginFooter from "../components/LoginPage/LoginFooter";
 import "./LoginPage.css";
 const LoginPage = () => {
     return (
