@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './RegisterHero.css';
+import { useNavigate } from 'react-router-dom';
 const RegisterHero = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
-      fullName: '',
+      username: '',
       email: '',
       password: '',
       confirmPassword: ''
     });
-  
+
+    
     const handleInputChange = (e) => {
       const { name, value } = e.target;
       setFormData(prev => ({
@@ -16,9 +20,18 @@ const RegisterHero = () => {
       }));
     };
   
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log('Registration data:', formData);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:5000/api/register', formData);
+            if (response.status === 200) {
+                console.log(response.data);
+                navigate('/login');
+
+            }
+        } catch (error) {
+            console.error('Registration error:', error.response?.data || error.message);
+        }
     };
   
     return (
@@ -33,7 +46,7 @@ const RegisterHero = () => {
               <div className="input-group">
                 <input
                   type="text"
-                  name="fullName"
+                  name="username"
                   placeholder="Full Name"
                   value={formData.fullName}
                   onChange={handleInputChange}

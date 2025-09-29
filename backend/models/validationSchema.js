@@ -20,6 +20,8 @@ export const registerSchema = {
             errorMessage : "Password must be at least 6 characters long"
         }
     }
+
+    
 }
 
 export const loginSchema = {

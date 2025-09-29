@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './LoginHero.css';
+import axios from 'axios';
 
 const LoginHero = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    email: '',
     password: ''
   });
 
+  const [token, setToken] = useState('');
+  
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -14,10 +17,16 @@ const LoginHero = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Login attempt:', formData);
-    // Handle login logic here
+    try {
+      const response = await axios.post('http://localhost:5000/api/login', formData);
+      console.log('Login successful:', response.data);
+      setToken(response.data.token);
+    } catch (error) {
+      console.error('Login error:', error.response?.data || error.message);
+    }
   };
 
   return (
@@ -62,7 +71,7 @@ const LoginHero = () => {
           </button>
           
           <p className="register-link">
-            Don't have an account? <a href="#register">Register</a>
+            Don't have an account? <a href="/register">Register</a>
           </p>
         </div>
       </div>
